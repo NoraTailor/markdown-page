@@ -8,18 +8,18 @@ import { useState } from 'react';
 
 function Editor({ markdown, setMarkdown }) {
 	const [isExpanded, setIsExpanded] = useState(false);
+
 	const handleValue = (e) => {
 		const value = e.target.value;
 		setMarkdown(value);
 	};
 	const handleExpand = () => {
 		setIsExpanded(!isExpanded);
-		console.log(Boolean(markdown));
 	};
 	return (
 		<Wrapper
 			className={
-				isExpanded ? 'container ' : 'container expanded'
+				isExpanded ? 'container expanded' : 'container '
 			}>
 			<div className='box-header'>
 				Editor{' '}
